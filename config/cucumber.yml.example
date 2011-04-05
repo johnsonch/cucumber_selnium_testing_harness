@@ -1,4 +1,4 @@
-<% defaults = "ROOT='/' HOST_TO_TEST=ilox.local HUB=sauce -r features/step_definitions -r features/support --format pretty features" %>
+<% defaults = "ROOT='/' HOST_TO_TEST={MY_SITE.COM} HUB=sauce -r features/step_definitions -r features/support --format pretty features" %>
 
 sauce_7: BROWSER=iehta VERSION='7.' <%= defaults %>
 sauce_8: BROWSER=iehta VERSION='8.' <%= defaults %>
@@ -13,7 +13,7 @@ rerun_opts = rerun.to_s.strip.empty? ? "--format #{ENV['CUCUMBER_FORMAT'] || 'pr
 std_opts = "-r features/step_definitions -r features/support --format #{ENV['CUCUMBER_FORMAT'] || 'progress'} --strict --tags ~@wip"
 %>
 
-local: HOST_TO_TEST=mural.local ROOT=/ HUB=localhost -r features/step_definitions -r features/support --format pretty features 
+local: HOST_TO_TEST=localhost ROOT=/ HUB=localhost -r features/step_definitions -r features/support --format pretty features 
 default: <%= std_opts %> features
 wip: --tags @wip:3 --wip features
 rerun: <%= rerun_opts %> --format rerun --out rerun.txt --strict --tags ~@wip
