@@ -27,8 +27,8 @@ Before do |scenario|
 
   if SAUCE 
     sauce_browser = {
-          "username" => "johnsonch",
-          "access-key" => "0f907103-c32f-439b-9912-a37b58a0f640",
+          "username" => ENV["SAUCE_USERNAME"],
+          "access-key" => ENV["SAUCE_KEY"],
           "os" => ENV["OS"] || "Windows 2003",
           "browser" => ENV["BROWSER"] || "firefox",
           "browser-version" => ENV["VERSION"] || "3.", 
