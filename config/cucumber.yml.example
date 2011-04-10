@@ -1,4 +1,4 @@
-<% defaults = "ROOT='/' HOST_TO_TEST={MY_SITE.COM} HUB=sauce SAUCE_USERNAME={MY_SAUCE_USERNAME} SAUCE_KEY={MY_SAUCE_KEY}-r features/step_definitions -r features/support --format pretty features" %>
+<% defaults = "ROOT='/' HOST_TO_TEST={MY_SITE.COM} APP_PORT={PORT_SERVER_IS_RUNNING_ON} HUB=sauce SAUCE_USERNAME={MY_SAUCE_USERNAME} SAUCE_KEY={MY_SAUCE_KEY}-r features/step_definitions -r features/support --format pretty features" %>
 
 sauce_7: BROWSER=iehta VERSION='7.' <%= defaults %>
 sauce_8: BROWSER=iehta VERSION='8.' <%= defaults %>
