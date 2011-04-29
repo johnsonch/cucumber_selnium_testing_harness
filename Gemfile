@@ -10,11 +10,10 @@ group :development, :test do
 end
 
 group :cucumber do
+  gem 'sauce'
   gem 'cucumber', '>=0.10.0'
-  gem 'cucumber-rails', '>=0.3.2'
   gem 'database_cleaner', '>=0.5.0'
   gem 'guard-cucumber', :git => 'https://github.com/jcnnghm/guard-cucumber.git' 
-  gem 'selenium-client'
   gem 'webrat', :git => 'http://github.com/notch8/webrat.git'
   gem 'selenium-rc'
 end

@@ -4,19 +4,21 @@ http://www.saucelabs.com/signup
 == Edit Configs
 Copy all example config files in "configs" to not have the .example extension
 
-modify the cucumber.yml file to have the personalized values added.  You will want to add your HOST_TO_TEST, SAUCE_USER_NAME and SAUCE_KEY.
+Generate your ondemand.yml file from the command line with this command: $sauce config USERNAME ACCESS_KEY
+
+modify the cucumber.yml file to have the personalized values added. 
 
 == Run against Sauce Labs
 To start a test running on Sauce Labs from the command line run the command "cucumber -p sauce_{your browser of choice, 7 for ie7 8 for ie8 f for firefox, etc} feature/some_feature_file.feature"  
 
 == Tunnel
-When creating a tunel with Sauce labs make sure you have a host with a two value TLD.  Like foo.bar or localhost.com
+When creating a tunnel with Sauce labs make sure you have a host with a two value TLD.  Like foo.bar or localhost.com
 
 == Selenium RC
 Selenium RC in this project is a gem used to start a Selenium Remote control you just need to start it with the command "selenium-rc" from your terminal
 
 == Run Locally
-To start running locally start up your Selenium RC and then from a seperate command prompt run "cucumber -p local" to run all features.  You can run a specific feature by typing "cucumber -p local features/some_feature_file.feature
+To start running locally start up your Selenium RC and then from a separate command prompt run "cucumber -p local" to run all features.  You can run a specific feature by typing "cucumber -p local features/some_feature_file.feature
 
 == Docs and Resources
 http://selenium-client.rubyforge.org/

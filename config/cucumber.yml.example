@@ -1,4 +1,9 @@
-<% defaults = "ROOT='/' HOST_TO_TEST={MY_SITE.COM} APP_PORT={PORT_SERVER_IS_RUNNING_ON} HUB=sauce SAUCE_USERNAME={MY_SAUCE_USERNAME} SAUCE_KEY={MY_SAUCE_KEY}-r features/step_definitions -r features/support --format pretty features" %>
+<% defaults = "ROOT='/' 
+              HOST_TO_TEST=http://www.google.com 
+              APP_PORT=80 
+              HUB=sauce 
+              -r features/step_definitions 
+              -r features/support --format pretty features" %>
 
 sauce_7: BROWSER=iehta VERSION='7.' <%= defaults %>
 sauce_8: BROWSER=iehta VERSION='8.' <%= defaults %>
@@ -6,14 +11,11 @@ sauce_f: BROWSER=firefox VERSION='3.' <%= defaults %>
 sauce_s: BROWSER=safariproxy  VERSION='5.'   <%= defaults %>  
 sauce_c: BROWSER=googlechrome VERSION=' '    <%= defaults %> 
 
+local: HOST_TO_TEST=http://www.google.com ROOT=/ HUB=localhost -r features/step_definitions -r features/support --format pretty features 
 
 <%
-rerun = File.file?('rerun.txt') ? IO.read('rerun.txt') : ""
-rerun_opts = rerun.to_s.strip.empty? ? "--format #{ENV['CUCUMBER_FORMAT'] || 'progress'} features" : "--format #{ENV['CUCUMBER_FORMAT'] || 'pretty'} #{rerun}"
-std_opts = "-r features/step_definitions -r features/support --format #{ENV['CUCUMBER_FORMAT'] || 'progress'} --strict --tags ~@wip"
+std_opts = "--format #{ENV['CUCUMBER_FORMAT'] || 'pretty'} --strict --tags ~@wip"
 %>
-
-local: HOST_TO_TEST=localhost ROOT=/ HUB=localhost -r features/step_definitions -r features/support --format pretty features 
 default: <%= std_opts %> features
 wip: --tags @wip:3 --wip features
-rerun: <%= rerun_opts %> --format rerun --out rerun.txt --strict --tags ~@wip
+
