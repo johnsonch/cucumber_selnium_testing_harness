@@ -1,17 +1,17 @@
 <% defaults = "ROOT='/' 
-              HOST_TO_TEST=http://www.google.com 
+              HOST_TO_TEST=http://www.google.com
               APP_PORT=80 
               HUB=sauce 
               -r features/step_definitions 
               -r features/support --format pretty features" %>
+sauce_ie7_03: BROWSER=iehta VERSION='7.' <%= defaults %>
+sauce_ie8_03: BROWSER=iehta VERSION='8.' <%= defaults %>
+sauce_ie9_08: BROWSER=ietha VERSION='9.' OS='Windows 2008'<%= defaults %>
 
-sauce_7: BROWSER=iehta VERSION='7.' <%= defaults %>
-sauce_8: BROWSER=iehta VERSION='8.' <%= defaults %>
 sauce_f: BROWSER=firefox VERSION='3.' <%= defaults %> 
 sauce_s: BROWSER=safariproxy  VERSION='5.'   <%= defaults %>  
 sauce_c: BROWSER=googlechrome VERSION=' '    <%= defaults %> 
-
-local: HOST_TO_TEST=http://www.google.com ROOT=/ HUB=localhost -r features/step_definitions -r features/support --format pretty features 
+local: HOST_TO_TEST=http://qedserver.local ROOT=/ HUB=localhost -r features/step_definitions -r features/support --format pretty features 
 
 <%
 std_opts = "--format #{ENV['CUCUMBER_FORMAT'] || 'pretty'} --strict --tags ~@wip"

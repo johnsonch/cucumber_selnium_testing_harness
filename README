@@ -4,7 +4,7 @@ http://www.saucelabs.com/signup
 == Edit Configs
 Copy all example config files in "configs" to not have the .example extension
 
-Generate your ondemand.yml file from the command line with this command: $sauce config USERNAME ACCESS_KEY
+Modify the ondemand.yml file by adding your sauce username and sauce api key
 
 modify the cucumber.yml file to have the personalized values added. 
 
