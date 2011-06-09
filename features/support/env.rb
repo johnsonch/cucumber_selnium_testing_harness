@@ -31,5 +31,5 @@ Before do |scenario|
 end
 
 After do |scenario|
-  @selenium.stop
+  @selenium.stop if SAUCE
 end

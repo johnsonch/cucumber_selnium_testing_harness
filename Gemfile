@@ -11,6 +11,7 @@ end
 
 group :cucumber do
   gem 'sauce'
+  gem 'selenium-client'
   gem 'cucumber', '>=0.10.0'
   gem 'database_cleaner', '>=0.5.0'
   gem 'guard-cucumber', :git => 'https://github.com/jcnnghm/guard-cucumber.git' 

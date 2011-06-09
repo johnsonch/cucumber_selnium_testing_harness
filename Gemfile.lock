@@ -166,6 +166,7 @@ DEPENDENCIES
   rails (= 3.0.1)
   rspec-rails (>= 2.1.0)
   sauce
+  selenium-client
   selenium-rc
   sqlite3-ruby
   webrat!
