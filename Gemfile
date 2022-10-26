@@ -1,11 +1,11 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.1'
+gem 'rails', '5.2.4.3'
 
 gem 'sqlite3-ruby', :require => 'sqlite3'
 
 group :development, :test do
-  gem 'rspec-rails', '>= 2.1.0'
+  gem 'rspec-rails', '>= 2.8.0'
   gem "mongrel", ">= 1.2.0.pre2"
 end
 
